@@ -1,0 +1,83 @@
+body{
+	margin: 0;
+}
+.cubicbez{
+	width: 100%;
+	height: auto;
+	text-align: center;
+	// overflow: hidden;
+	position: relative;
+	padding: 10px 0px;
+	background-color: black;
+    
+	.cubi-banner{
+		.slider2 {
+			height: 180px;
+			top: 10%;
+			display: flex;
+			column-gap: 10px;
+			background-color: black;
+			margin: 0 5px;
+			.item{
+				width: 500px;
+				transition: 0.5s cubic-bezier(.87,-1.38,.03,1.54);
+				// transition: 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+				// background-color: rgb(110, 0, 0);
+				&:hover{
+					width: 600px;
+				}
+				img {
+					width: 100%;
+					height: 180px;
+					image-rendering: optimizeSpeed;
+					object-fit: fill;
+				}
+			}
+		}
+	}
+}
+
+
+// ====================================
+// ====================================
+// ====================================
+.cro3{
+@keyframes autoRun {
+	from {
+		transform: perspective(1000px) rotateX(-9.5deg) rotateY(0deg);
+	}
+	to {
+		transform: perspective(1000px) rotateX(-9.5deg) rotateY(390deg);
+	}
+}
+.banner {
+	// width: 100%;
+	// height: 640px;
+	// text-align: center;
+	// overflow: hidden;
+	// position: relative;
+	.slider3 {
+		position: absolute;
+		width: 213px;
+		height: 323px;
+		top: 10%;
+		left: calc(50% - 100px);
+		
+		z-index: 0;
+		.item {
+			position: absolute;
+			inset: 0 0 0 0;
+			// transform: rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg)) translateZ(550px);
+			// transform-style: preserve-3d;
+			// transform: perspective(100px);
+			animation: autoRun 875ms linear infinite;
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+	}
+}
+
+}

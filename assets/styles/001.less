@@ -1,0 +1,70 @@
+
+@keyframes autoRun {
+	from {
+		transform: perspective(1000px) rotateX(-9.5deg) rotateY(0deg);
+	}
+	to {
+		transform: perspective(1000px) rotateX(-9.5deg) rotateY(360deg);
+	}
+}
+.banner {
+	width: 100%;
+	height: 640px;
+	text-align: center;
+	overflow: hidden;
+	position: relative;
+	.slider {
+		position: absolute;
+		width: 200px;
+		height: 250px;
+		top: 10%;
+		left: calc(50% - 100px);
+		transform-style: preserve-3d;
+		transform: perspective(1000px);
+		animation: autoRun 20s linear infinite;
+		z-index: 0;
+		.item {
+			position: absolute;
+			inset: 0 0 0 0;
+			transform: rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg)) translateZ(550px);
+			img {
+				&:hover {
+					animation-play-state: paused;
+					filter: blur(0px);
+				}
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				filter: blur(2px);
+			}
+		}
+		&:hover {
+			animation-play-state: paused;
+		}
+	}
+	.content {
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		transform: translate(-50%);
+		width: min(1400px, 100vw);
+		height: max-content;
+		padding-bottom: 100px;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: center;
+		.model {
+			background-image: url(../../img/main2.png);
+			width: 100%;
+			height: 75vh;
+			position: absolute;
+			background-repeat: no-repeat;
+			bottom: 0;
+			left: 0;
+			background-size: auto 130%;
+			background-position: top center;
+			z-index: 1;
+		}
+	}
+}
